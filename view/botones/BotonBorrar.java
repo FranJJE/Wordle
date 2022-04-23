@@ -13,6 +13,7 @@ public class BotonBorrar extends JButton {
     //y lo sabes
     public BotonBorrar(String text, int X, int Y) {
         super(text);
+        //probando
         try {
             InputStream inputStream = new BufferedInputStream(
                     new FileInputStream("C:\\Users\\Administrador\\Desktop\\Fuentes\\Adamant_BG.otf"));
