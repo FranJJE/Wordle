@@ -9,6 +9,7 @@ import java.io.InputStream;
 
 public class BotonBorrar extends JButton {
     //Solo es para probar jeje
+    //ere mongoliko
     public BotonBorrar(String text, int X, int Y) {
         super(text);
         try {
