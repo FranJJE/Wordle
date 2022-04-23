@@ -11,6 +11,7 @@ public class BotonBorrar extends JButton {
     //Solo es para probar jeje
     //ere mongoliko
     //y lo sabes
+    //jajdsjad
     public BotonBorrar(String text, int X, int Y) {
         super(text);
         //probando
