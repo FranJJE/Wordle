@@ -9,6 +9,7 @@ public class Main {
         Controller control = new Controller();
 
         System.out.println(control.getWord());
+        System.out.println("hola");
 
         while(true)
         {
