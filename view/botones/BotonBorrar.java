@@ -8,12 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class BotonBorrar extends JButton {
-    //Solo es para probar jeje
-    //ere mongoliko
-    //y lo sabes
     public BotonBorrar(String text, int X, int Y) {
         super(text);
-        //probando
         try {
             InputStream inputStream = new BufferedInputStream(
                     new FileInputStream("C:\\Users\\Administrador\\Desktop\\Fuentes\\Adamant_BG.otf"));
@@ -27,6 +23,6 @@ public class BotonBorrar extends JButton {
         }
         setBounds(X, Y, 70, 55);
         setBackground(new Color(186, 116, 213));
-        //hola
+
     }
 }
