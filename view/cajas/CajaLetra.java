@@ -9,6 +9,7 @@ public class CajaLetra extends JTextField {
     public CajaLetra(int posicion) {
         this.posicion = posicion;
         setBackground(Color.WHITE);
+        setEditable(false);
 
     }
 
