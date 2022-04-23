@@ -1,4 +1,4 @@
-package modelo.botones;
+package view.botones;
 
 import javax.swing.*;
 import java.awt.*;

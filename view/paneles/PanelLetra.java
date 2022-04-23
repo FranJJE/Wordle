@@ -1,4 +1,4 @@
-package modelo.paneles;
+package view.paneles;
 
 import modelo.cajas.CajaLetra;
 

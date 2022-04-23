@@ -1,6 +1,6 @@
-package modelo.paneles;
+package view.paneles;
 
-import modelo.botones.BotonTeclado;
+import view.botones.BotonTeclado;
 
 import javax.swing.*;
 import java.awt.*;

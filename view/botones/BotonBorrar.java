@@ -1,4 +1,4 @@
-package modelo.botones;
+package view.botones;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class BotonBorrar extends JButton {
+    //Solo es para probar jeje
     public BotonBorrar(String text, int X, int Y) {
         super(text);
         try {

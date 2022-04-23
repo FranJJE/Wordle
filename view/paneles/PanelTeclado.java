@@ -1,8 +1,8 @@
-package modelo.paneles;
+package view.paneles;
 
-import modelo.botones.BotonBorrar;
-import modelo.botones.BotonEnviar;
-import modelo.botones.BotonTeclado;
+import view.botones.BotonBorrar;
+import view.botones.BotonEnviar;
+import view.botones.BotonTeclado;
 
 import javax.swing.*;
 //495 ANCHO (10 BOTONES X 45 de WIDTH + 9 HUECOS(de 5)) + 185 DE WIDTH + 3 HUECOS(de 10))
