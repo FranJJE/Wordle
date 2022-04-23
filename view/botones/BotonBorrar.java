@@ -28,6 +28,6 @@ public class BotonBorrar extends JButton {
         }
         setBounds(X, Y, 70, 55);
         setBackground(new Color(186, 116, 213));
-        System.out.println("ere un paiaso");
+        //hola
     }
 }
