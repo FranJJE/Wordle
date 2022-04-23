@@ -5,7 +5,7 @@ import view.botones.BotonTeclado;
 import javax.swing.*;
 import java.awt.*;
 
-public class PanelPrincipal extends JFrame{
+public class PanelPrincipal extends JFrame {
     public JFrame pantalla = new JFrame();
 
     public PanelPrincipal() {
@@ -15,7 +15,7 @@ public class PanelPrincipal extends JFrame{
         pantalla.add(new PanelLetra());
         pantalla.setVisible(true);
         pantalla.setResizable(false);
-        pantalla.setBounds(80,20,1200,700);
+        pantalla.setBounds(80, 20, 1200, 700);
         pantalla.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 }

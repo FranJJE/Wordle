@@ -21,7 +21,7 @@ public class BotonTeclado extends JButton {
         } catch (FontFormatException | IOException e) {
             e.printStackTrace();
         }
-        setBounds(X,Y,50,55);
+        setBounds(X, Y, 50, 55);
         setBackground(new Color(156, 169, 173));
     }
 }

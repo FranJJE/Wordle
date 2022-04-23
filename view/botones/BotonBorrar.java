@@ -22,7 +22,8 @@ public class BotonBorrar extends JButton {
         } catch (FontFormatException | IOException e) {
             e.printStackTrace();
         }
-        setBounds(X,Y,70,55);
+        setBounds(X, Y, 70, 55);
         setBackground(new Color(186, 116, 213));
+        System.out.println("ere un paiaso");
     }
 }
