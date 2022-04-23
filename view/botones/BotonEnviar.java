@@ -21,7 +21,7 @@ public class BotonEnviar extends JButton {
         } catch (FontFormatException | IOException e) {
             e.printStackTrace();
         }
-        setBounds(X,Y,85,55);
+        setBounds(X, Y, 85, 55);
         setBackground(new Color(116, 170, 213));
     }
 }
