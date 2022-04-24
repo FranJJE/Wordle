@@ -1,5 +1,6 @@
 package view.paneles;
 
+import controller.EventLetterPressed;
 import view.botones.BotonBorrar;
 import view.botones.BotonEnviar;
 import view.botones.BotonTeclado;
@@ -18,6 +19,7 @@ public class PanelTeclado extends JPanel {
         super(null);
         setBounds(300, 470, 545, 185);
         for (BotonTeclado a : botones) {
+            a.addKeyListener(new EventLetterPressed());
             add(a);
         }
         add(enviar);
