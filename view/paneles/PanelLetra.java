@@ -24,6 +24,14 @@ public class PanelLetra extends JPanel {
             }
         }
     }
+    public static void resetColumna() {
+        columna = 0;
+    }
+    public static void borrarTexto() {
+        if (columna != 0) {
+            columna--;
+        }
+    }
     public static int getColumna() {
         return columna;
     }
@@ -39,12 +47,5 @@ public class PanelLetra extends JPanel {
     public static CajaLetra[][] getArrayPaneles() {
         return letrasPanel;
     }
-    /*
-    private final CajaLetra[] fila1 = {new CajaLetra(0), new CajaLetra(1), new CajaLetra(2), new CajaLetra(3), new CajaLetra(4)};
-    private final CajaLetra[] fila2 = {new CajaLetra(0), new CajaLetra(1), new CajaLetra(2), new CajaLetra(3), new CajaLetra(4)};
-    private final CajaLetra[] fila3 = {new CajaLetra(0), new CajaLetra(1), new CajaLetra(2), new CajaLetra(3), new CajaLetra(4)};
-    private final CajaLetra[] fila4 = {new CajaLetra(0), new CajaLetra(1), new CajaLetra(2), new CajaLetra(3), new CajaLetra(4)};
-    private final CajaLetra[] fila5 = {new CajaLetra(0), new CajaLetra(1), new CajaLetra(2), new CajaLetra(3), new CajaLetra(4)};
-     */
 }
 

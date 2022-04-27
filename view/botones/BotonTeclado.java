@@ -10,6 +10,7 @@ import java.io.InputStream;
 public class BotonTeclado extends JButton {
     public BotonTeclado(String text, int X, int Y) {
         super(text);
+        setFocusPainted(false);
         try {
             InputStream inputStream = new BufferedInputStream(
                     new FileInputStream("C:\\Users\\Administrador\\Desktop\\Fuentes\\Adamant_BG.otf"));
@@ -21,6 +22,7 @@ public class BotonTeclado extends JButton {
         } catch (FontFormatException | IOException e) {
             e.printStackTrace();
         }
+        setBorder(null);
         setBounds(X, Y, 50, 55);
         setBackground(new Color(156, 169, 173));
     }

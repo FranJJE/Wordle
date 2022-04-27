@@ -1,5 +1,6 @@
 package controller;
 
+import jdk.swing.interop.SwingInterOpUtils;
 import view.paneles.PanelLetra;
 
 import java.awt.event.KeyEvent;
@@ -9,26 +10,27 @@ public class EventLetterPressed implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        char a = e.getKeyChar();
-        boolean condition = false;
-
-        for (int i = 0; i < 26; i++) {
-            if (a == 'A' + i) condition = true;
-        }
-        if (a == 'Ñ') condition = true;
-        if (!condition) {
-            if(PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].getText().length() == 0) {
-                PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].setText(String.valueOf(a));
-                if (PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].getPosicion() != 4) {
-                    PanelLetra.plusColumna();
-                }
-            }
-        }
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
 
+        char a = e.getKeyChar();
+
+        if (a >= 97 && a <= 122 || a == 'ñ') {
+            String b = String.valueOf(a);
+            b = b.toUpperCase();
+
+            if (PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].getText().length() == 0) {
+                PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].setText(b);
+                if (PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].getPosicion() != 4) {
+                    PanelLetra.plusColumna();
+                }
+            }
+        } else if (e.getKeyCode() == 8) {
+                PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna() - 1].setText("");
+                PanelLetra.borrarTexto();
+        }
     }
 
     @Override
