@@ -31,11 +31,11 @@ public class EventLetterPressed implements KeyListener {
                 if (PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].getText().length() == 0) {
                     if(PanelLetra.getColumna() != 0) {
                         PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna() - 1].setText("");
+                        PanelLetra.borrarTexto();
                     }
                 } else {
                     PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].setText("");
                 }
-                PanelLetra.borrarTexto();
         }
     }
 
