@@ -48,11 +48,11 @@ public class Model {
     public void selectWord()
     {
 
-        try(RandomAccessFile rnd = new RandomAccessFile("src\\model\\words.txt","rw"))
+        try(RandomAccessFile rnd = new RandomAccessFile("src\\model\\words.txt","r"))
         {
-            int pos = (int)(Math.random() * (rnd.length() / 6));
+            int pos = (int)(Math.random() * rnd.length() / 6);
             rnd.seek(pos*6);
-            System.out.println(pos*6);
+            //System.out.println(rnd.length());
             word = rnd.readLine();
         }
         catch(IOException e)

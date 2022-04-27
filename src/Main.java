@@ -8,12 +8,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /*
+
         Scanner sc = new Scanner(System.in);
         Controller control = new Controller();
+        WordsDB wdb = new WordsDB();
+
+        //wdb.lookForWords("src\\model\\words.txt");
 
         System.out.println(control.getWord());
-        System.out.println("hola");
 
         while(true)
         {
@@ -23,7 +25,7 @@ public class Main {
             System.out.println(Arrays.toString(control.getLetters(palabra)));
         }
 
-         */
-        new PanelPrincipal();
+
+        //new PanelPrincipal();
     }
 }
