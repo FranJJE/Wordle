@@ -23,6 +23,7 @@ public class PanelTeclado extends JPanel {
             add(a);
         }
         borrar.addKeyListener(new EventLetterPressed());
+        enviar.addKeyListener(new EventLetterPressed());
         add(enviar);
         add(borrar);
     }

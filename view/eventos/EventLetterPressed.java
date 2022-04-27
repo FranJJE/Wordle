@@ -36,6 +36,11 @@ public class EventLetterPressed implements KeyListener {
                 } else {
                     PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].setText("");
                 }
+        } else if (e.getKeyCode() == 10) {
+            if (PanelLetra.getColumna() == 4 && PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].getText().length() != 0) {
+                PanelLetra.plusFila();
+                PanelLetra.resetColumna();
+            }
         }
     }
 
