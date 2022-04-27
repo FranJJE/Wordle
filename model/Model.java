@@ -2,8 +2,6 @@ package model;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
-
-
 public class Model {
     private String word;
 
@@ -48,7 +46,7 @@ public class Model {
     public void selectWord()
     {
 
-        try(RandomAccessFile rnd = new RandomAccessFile("src\\model\\words.txt","r"))
+        try(RandomAccessFile rnd = new RandomAccessFile("src\\words.txt","r"))
         {
             int pos = (int)(Math.random() * rnd.length() / 6);
             rnd.seek(pos*6);
