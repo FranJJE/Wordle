@@ -1,4 +1,4 @@
-package controller;
+package view.eventos;
 
 import jdk.swing.interop.SwingInterOpUtils;
 import view.paneles.PanelLetra;
@@ -28,7 +28,13 @@ public class EventLetterPressed implements KeyListener {
                 }
             }
         } else if (e.getKeyCode() == 8) {
-                PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna() - 1].setText("");
+                if (PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].getText().length() == 0) {
+                    if(PanelLetra.getColumna() != 0) {
+                        PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna() - 1].setText("");
+                    }
+                } else {
+                    PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].setText("");
+                }
                 PanelLetra.borrarTexto();
         }
     }

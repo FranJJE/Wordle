@@ -1,6 +1,6 @@
 package view.paneles;
 
-import controller.EventLetterPressed;
+import view.eventos.EventLetterPressed;
 import view.botones.BotonBorrar;
 import view.botones.BotonEnviar;
 import view.botones.BotonTeclado;
