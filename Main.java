@@ -25,8 +25,5 @@ public class Main {
             System.out.println(Arrays.toString(control.getLetters(palabra)));
         }
          */
-
-
-        new PanelPrincipal();
     }
 }
