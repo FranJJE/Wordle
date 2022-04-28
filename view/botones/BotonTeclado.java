@@ -13,7 +13,7 @@ public class BotonTeclado extends JButton {
         setFocusPainted(false);
         try {
             InputStream inputStream = new BufferedInputStream(
-                    new FileInputStream("C:\\Users\\Administrador\\Desktop\\Fuentes\\Adamant_BG.otf"));
+                    new FileInputStream("src\\view\\fuentes\\Adamant_BG.otf"));
 
             Font font = Font.createFont(Font.TRUETYPE_FONT, inputStream);
 
