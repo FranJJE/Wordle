@@ -6,10 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelLetra extends JPanel {
-    private static int columna = 0;
-    private static int fila = 0;
+    public static int columna = 0;
+    public static int fila = 0;
 
-    private static final CajaLetra[][] letrasPanel = new CajaLetra[5][5];
+    public static final CajaLetra[][] letrasPanel = new CajaLetra[5][5];
     public PanelLetra() {
         for (int i = 0; i < letrasPanel.length; i++) {
             for (int y = 0; y < letrasPanel[0].length; y++) {
