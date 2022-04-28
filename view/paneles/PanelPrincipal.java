@@ -7,8 +7,8 @@ import java.awt.*;
 
 public class PanelPrincipal extends JFrame {
     public JFrame pantalla = new JFrame();
-    private static PanelLetra letras = new PanelLetra();
-    private static PanelTeclado teclado = new PanelTeclado();
+    public static PanelLetra letras = new PanelLetra();
+    public static PanelTeclado teclado = new PanelTeclado();
 
     public PanelPrincipal() {
         pantalla.add(new PanelTeclado());
