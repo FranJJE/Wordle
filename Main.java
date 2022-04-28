@@ -17,13 +17,13 @@ public class Main {
 
         System.out.println(control.getWord());
 
-        /*while(true)
+        while(true)
         {
             System.out.print("Palabra => ");
             String palabra = sc.nextLine();
             if(palabra.equals("salir")) break;
             System.out.println(Arrays.toString(control.getLetters(palabra)));
         }
-         */
+
     }
 }
