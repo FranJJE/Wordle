@@ -1,8 +1,6 @@
 package view.eventos;
 
-import jdk.swing.interop.SwingInterOpUtils;
 import view.paneles.PanelLetra;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -36,11 +34,6 @@ public class EventLetterPressed implements KeyListener {
                 } else {
                     PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].setText("");
                 }
-        } else if (e.getKeyCode() == 10) {
-            if (PanelLetra.getColumna() == 4 && PanelLetra.getArrayPaneles()[PanelLetra.getFila()][PanelLetra.getColumna()].getText().length() != 0) {
-                PanelLetra.plusFila();
-                PanelLetra.resetColumna();
-            }
         }
     }
 
