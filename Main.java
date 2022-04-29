@@ -13,7 +13,7 @@ public class Main {
         Controller control = new Controller();
         WordsDB wdb = new WordsDB();
 
-        //wdb.lookForWords("src\\words.txt");
+        wdb.lookForWords("src\\model\\wordsBackup.txt");
 
         System.out.println(control.getWord());
 
