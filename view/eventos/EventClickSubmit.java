@@ -14,8 +14,14 @@ import static view.paneles.PanelLetra.letrasPanel;
 public class EventClickSubmit implements ActionListener
 {
 
-    private CajaLetra[][] letras = PanelLetra.letrasPanel;
-    private Model model = Controller.getModel();
+    private CajaLetra[][] letras;
+    private Model model;
+
+    public EventClickSubmit()
+    {
+        model = Controller.getModel();
+        letras = PanelLetra.letrasPanel;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

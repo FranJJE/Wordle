@@ -1,6 +1,7 @@
 package view.paneles;
 
 import view.botones.BotonTeclado;
+import view.cajas.CajaTitulo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,10 +10,11 @@ public class PanelPrincipal extends JFrame {
     public JFrame pantalla = new JFrame();
     public static PanelLetra letras = new PanelLetra();
     public static PanelTeclado teclado = new PanelTeclado();
+    public static CajaTitulo titulo = new CajaTitulo();
 
     public PanelPrincipal() {
-        pantalla.add(new PanelTeclado());
-        pantalla.add(new PanelLetra());
+        titulo.setText("Wordle");
+        pantalla.add(titulo);
         pantalla.setBackground(Color.white);
         pantalla.setLayout(null);
         pantalla.add(teclado);
