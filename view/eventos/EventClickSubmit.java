@@ -1,5 +1,6 @@
 package view.eventos;
 
+import controller.Controller;
 import model.Model;
 import view.cajas.CajaLetra;
 import view.paneles.PanelLetra;
@@ -8,48 +9,49 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static view.paneles.PanelLetra.letrasPanel;
+
 public class EventClickSubmit implements ActionListener
 {
-    private CajaLetra[][] letrasPanel;
-    private Model model;
-    private int fila = PanelLetra.getFila();
 
-    public EventClickSubmit(Model model, CajaLetra[][] letrasPanel)
+    private CajaLetra[][] letras;
+    private Model model;
+
+    public EventClickSubmit()
     {
-        this.model = model;
-        this.letrasPanel = letrasPanel;
+        model = Controller.getModel();
+        letras = PanelLetra.letrasPanel;
     }
 
-   @Override
+    @Override
     public void actionPerformed(ActionEvent e) {
+        int[] result = model.checkLetters(getLetras());
 
-        int[] result = model.checkLetters( getLetras());
-
-        for(int i = 0; i < result.length; i++)
-        {
-            switch (result[i])
-            {
+        for (int i = 0; i < result.length; i++) {
+            switch (result[i]) {
                 case 0:
-                    letrasPanel[fila][i].setBackground(Color.gray);
+                    letras[PanelLetra.fila][i].setBackground(Color.gray);
                     break;
                 case 1:
-                    letrasPanel[fila][i].setBackground(Color.yellow);
+                    letras[PanelLetra.fila][i].setBackground(Color.yellow);
                     break;
                 case 2:
-                    letrasPanel[fila][i].setBackground(Color.green);
+                    letras[PanelLetra.fila][i].setBackground(Color.green);
                     break;
             }
         }
+        PanelLetra.fila++;
+        PanelLetra.columna = 0;
     }
 
     public String getLetras()
     {
-        String word ="";
+        String word = "";
 
-        for(int i = 0; i < letrasPanel.length; i++)
-        {
-            word += letrasPanel[fila][i].getText();
+        for (int i = 0; i < letras.length; i++) {
+            word += letrasPanel[PanelLetra.fila][i].getText();
         }
-        return word;
+
+        return word.toLowerCase();
     }
 }
