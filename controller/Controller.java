@@ -6,12 +6,12 @@ import view.paneles.PanelLetra;
 import view.paneles.PanelPrincipal;
 
 public class Controller {
-    Model model = new Model();
-    PanelPrincipal view = new PanelPrincipal();
+    private static Model model = new Model();
+    private PanelPrincipal view = new PanelPrincipal();
 
     public Controller()
     {
-        events();
+
     }
 
     public int[] getLetters(String userWord)
@@ -24,9 +24,9 @@ public class Controller {
         return model.getWord();
     }
 
-    public void events()
+    public static Model getModel()
     {
-        PanelPrincipal.teclado.enviar.addActionListener( new EventClickSubmit(model, PanelLetra.letrasPanel));
+        return model;
     }
 
 
