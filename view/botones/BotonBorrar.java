@@ -14,7 +14,7 @@ public class BotonBorrar extends JButton {
 
         try {
             InputStream inputStream = new BufferedInputStream(
-                    new FileInputStream("src\\view\\fuentes\\Adamant_BG.otf"));
+                    new FileInputStream("src\\view\\fuentes\\adamant\\Adamant_BG.otf"));
 
             Font font = Font.createFont(Font.TRUETYPE_FONT, inputStream);
 
