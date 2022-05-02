@@ -72,6 +72,32 @@ public class Model {
         return word;
     }
 
+    public boolean checkIfExists(String userWord)
+    {
+        String word ="";
+
+        try
+        {
+            Connection ct = DriverManager.getConnection("jdbc:mysql://localhost:3306/wordledb","root","almero23");
+
+            Statement st = ct.createStatement();
+
+            ResultSet rs = st.executeQuery("select word from wordpool where word='"+userWord+"'");
+
+            while(rs.next())
+            {
+                word = rs.getString("word");
+            }
+
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return !word.equals("");
+    }
+
     public String getWord()
     {
         return word;

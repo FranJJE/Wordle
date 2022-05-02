@@ -7,6 +7,7 @@ import view.cajas.CajaLetra;
 import view.paneles.PanelLetra;
 import view.paneles.PanelPrincipal;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,31 +30,38 @@ public class EventClickSubmit implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        int[] result = model.checkLetters(getLetras());
+        String word = getLetras();
 
-        if (PanelLetra.getFila() >= 3) {
-            for (int a : result) {
-                if (a != 2) {
-                    correcta.setVisible(true);
+        if(model.checkIfExists(word)){
+            int[] result = model.checkLetters(word);
+
+            if (PanelLetra.getFila() >= 3) {
+                for (int a : result) {
+                    if (a != 2) {
+                        correcta.setVisible(true);
+                    }
                 }
             }
-        }
-        for (int i = 0; i < result.length; i++) {
-            switch (result[i]) {
-                case 0:
-                    letras[PanelLetra.fila][i].setBackground(Color.gray);
-                    break;
-                case 1:
-                    letras[PanelLetra.fila][i].setBackground(Color.yellow);
-                    break;
-                case 2:
-                    letras[PanelLetra.fila][i].setBackground(Color.green);
-                    break;
+            for (int i = 0; i < result.length; i++) {
+                switch (result[i]) {
+                    case 0:
+                        letras[PanelLetra.fila][i].setBackground(Color.gray);
+                        break;
+                    case 1:
+                        letras[PanelLetra.fila][i].setBackground(Color.yellow);
+                        break;
+                    case 2:
+                        letras[PanelLetra.fila][i].setBackground(Color.green);
+                        break;
+                }
             }
+            PanelLetra.fila++;
+            PanelLetra.columna = 0;
         }
-        PanelLetra.fila++;
-        PanelLetra.columna = 0;
-
+        else
+        {
+            JOptionPane.showMessageDialog(null,"La palabra no existe");
+        }
     }
 
     public String getLetras()
