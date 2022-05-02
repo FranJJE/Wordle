@@ -2,8 +2,10 @@ package view.eventos;
 
 import controller.Controller;
 import model.Model;
+import view.cajas.CajaCorrecta;
 import view.cajas.CajaLetra;
 import view.paneles.PanelLetra;
+import view.paneles.PanelPrincipal;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,13 +16,28 @@ import static view.paneles.PanelLetra.letrasPanel;
 public class EventClickSubmit implements ActionListener
 {
 
-    private CajaLetra[][] letras = PanelLetra.letrasPanel;
-    private Model model = Controller.getModel();
+    private CajaLetra[][] letras;
+    private Model model;
+    private static CajaCorrecta correcta;
+
+    public EventClickSubmit()
+    {
+        correcta = PanelPrincipal.getCorrecta();
+        model = Controller.getModel();
+        letras = PanelLetra.letrasPanel;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         int[] result = model.checkLetters(getLetras());
 
+        if (PanelLetra.getFila() >= 3) {
+            for (int a : result) {
+                if (a != 2) {
+                    correcta.setVisible(true);
+                }
+            }
+        }
         for (int i = 0; i < result.length; i++) {
             switch (result[i]) {
                 case 0:
@@ -36,6 +53,7 @@ public class EventClickSubmit implements ActionListener
         }
         PanelLetra.fila++;
         PanelLetra.columna = 0;
+
     }
 
     public String getLetras()
