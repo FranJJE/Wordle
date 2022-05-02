@@ -62,6 +62,8 @@ public class EventClickSubmit implements ActionListener
         {
             JOptionPane.showMessageDialog(null,"La palabra no existe");
         }
+
+
     }
 
     public String getLetras()
