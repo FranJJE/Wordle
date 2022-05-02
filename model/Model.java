@@ -2,12 +2,14 @@ package model;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.sql.*;
+
 public class Model {
     private String word;
 
     public Model()
     {
-        selectWord();
+        word = getOneWord();
     }
     public boolean isSame(String userWord)
     {
@@ -43,20 +45,31 @@ public class Model {
         return result;
     }
 
-    public void selectWord()
+    public String getOneWord()
     {
+        int num = (int)(Math.random()*1000);
+        String word ="";
 
-        try(RandomAccessFile rnd = new RandomAccessFile("src\\words.txt","r"))
+        try
         {
-            int pos = (int)(Math.random() * rnd.length() / 6);
-            rnd.seek(pos*6);
-            //System.out.println(rnd.length());
-            word = rnd.readLine();
+            Connection ct = DriverManager.getConnection("jdbc:mysql://localhost:3306/wordledb","root","almero23");
+
+            Statement st = ct.createStatement();
+
+            ResultSet rs = st.executeQuery("select word from wordpool where id="+num);
+
+            while(rs.next())
+            {
+                word = rs.getString("word");
+            }
+
         }
-        catch(IOException e)
+        catch(SQLException e)
         {
             e.printStackTrace();
         }
+
+        return word;
     }
 
     public String getWord()
