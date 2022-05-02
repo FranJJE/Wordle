@@ -16,7 +16,7 @@ public class CajaTitulo extends JTextField {
         setHorizontalAlignment(CajaTitulo.CENTER);
         try {
             InputStream inputStream = new BufferedInputStream(
-                    new FileInputStream("C:\\Users\\Administrador\\Desktop\\Repositorio GIT\\src\\view\\fuentes\\panipuri\\Panipuri.otf"));
+                    new FileInputStream("src\\view\\fuentes\\panipuri\\Panipuri.otf"));
 
             Font font = Font.createFont(Font.TRUETYPE_FONT, inputStream);
 
