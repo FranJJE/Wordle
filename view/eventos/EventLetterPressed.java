@@ -57,7 +57,7 @@ public class EventLetterPressed implements KeyListener {
             if(model.checkIfExists(word)){
                 int[] result = model.checkLetters(word);
 
-                if (PanelLetra.getFila() >= 3) {
+                if (PanelLetra.getFila() >= 4) {
                     for (int b : result) {
                         if (b != 2) {
                             correcta.setVisible(true);

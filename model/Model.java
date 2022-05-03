@@ -52,7 +52,7 @@ public class Model {
 
         try
         {
-            Connection ct = DriverManager.getConnection("jdbc:mysql://localhost:3306/wordledb","root","almero23");
+            Connection ct = DriverManager.getConnection("jdbc:mysql://localhost:3306/wordledb","root","admin");
 
             Statement st = ct.createStatement();
 
@@ -78,7 +78,7 @@ public class Model {
 
         try
         {
-            Connection ct = DriverManager.getConnection("jdbc:mysql://localhost:3306/wordledb","root","almero23");
+            Connection ct = DriverManager.getConnection("jdbc:mysql://localhost:3306/wordledb","root","admin");
 
             Statement st = ct.createStatement();
 
