@@ -11,10 +11,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import static view.paneles.PanelLetra.letrasPanel;
 
-public class EventClickSubmit implements ActionListener
+public class EventClickSubmit implements ActionListener, KeyListener
 {
 
     private CajaLetra[][] letras;
@@ -35,7 +37,7 @@ public class EventClickSubmit implements ActionListener
         if(model.checkIfExists(word)){
             int[] result = model.checkLetters(word);
 
-            if (PanelLetra.getFila() >= 3) {
+            if (PanelLetra.getFila() >= 4) {
                 for (int a : result) {
                     if (a != 2) {
                         correcta.setVisible(true);
@@ -75,5 +77,20 @@ public class EventClickSubmit implements ActionListener
         }
 
         return word.toLowerCase();
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }

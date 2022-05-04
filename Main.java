@@ -3,11 +3,17 @@ import view.cajas.CajaLetra;
 import view.paneles.PanelLetra;
 import view.paneles.PanelPrincipal;
 
+import javax.swing.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        try{
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch(Exception e){
+            System.out.println(e);
+        }
 
         Scanner sc = new Scanner(System.in);
         Controller control = new Controller();

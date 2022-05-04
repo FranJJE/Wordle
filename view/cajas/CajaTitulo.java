@@ -10,6 +10,7 @@ import java.io.InputStream;
 public class CajaTitulo extends JTextField {
     public CajaTitulo() {
         setBounds(280,3,600,80);
+        setBackground(new Color(214, 217, 223, 255));
         setBorder(null);
         setFocusable(false);
         setEditable(false);

@@ -4,10 +4,11 @@ import model.Model;
 import view.eventos.EventClickSubmit;
 import view.paneles.PanelLetra;
 import view.paneles.PanelPrincipal;
+import view.paneles.PanelTeclado;
 
 public class Controller {
     private static Model model = new Model();
-    private PanelPrincipal view = new PanelPrincipal();
+    private static PanelPrincipal view = new PanelPrincipal();
 
     public Controller()
     {
@@ -28,6 +29,6 @@ public class Controller {
     {
         return model;
     }
-
+    public static PanelTeclado getTeclado() {return view.getTeclado();}
 
 }

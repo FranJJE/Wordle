@@ -2,9 +2,11 @@ package view.eventos;
 
 import controller.Controller;
 import model.Model;
+import view.botones.BotonTeclado;
 import view.cajas.CajaLetra;
 import view.paneles.PanelLetra;
 import view.paneles.PanelPrincipal;
+import view.paneles.PanelTeclado;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,9 +19,11 @@ import static view.paneles.PanelPrincipal.correcta;
 public class EventLetterPressed implements KeyListener {
     private CajaLetra[][] letras;
     private Model model;
+    private PanelTeclado teclado;
 
     public EventLetterPressed()
     {
+        teclado = Controller.getTeclado();
         model = Controller.getModel();
         letras = PanelLetra.letrasPanel;
     }
@@ -67,13 +71,19 @@ public class EventLetterPressed implements KeyListener {
                 for (int i = 0; i < result.length; i++) {
                     switch (result[i]) {
                         case 0:
-                            letras[PanelLetra.fila][i].setBackground(Color.gray);
+                            letras[PanelLetra.fila][i].setBackground(new Color(89, 87, 87));
+                            letras[PanelLetra.fila][i].setForeground(Color.white);
+                            pintarTeclado(letras[PanelLetra.fila][i].getText(), 0);
                             break;
                         case 1:
-                            letras[PanelLetra.fila][i].setBackground(Color.yellow);
+                            letras[PanelLetra.fila][i].setBackground(new Color(210, 174, 26));
+                            letras[PanelLetra.fila][i].setForeground(Color.white);
+                            pintarTeclado(letras[PanelLetra.fila][i].getText(), 1);
                             break;
                         case 2:
-                            letras[PanelLetra.fila][i].setBackground(Color.green);
+                            letras[PanelLetra.fila][i].setBackground(new Color(62, 157, 23));
+                            letras[PanelLetra.fila][i].setForeground(Color.white);
+                            pintarTeclado(letras[PanelLetra.fila][i].getText(), 2);
                             break;
                     }
                 }
@@ -100,5 +110,29 @@ public class EventLetterPressed implements KeyListener {
         }
 
         return word.toLowerCase();
+    }
+    public void pintarTeclado(String a, int tipo) {
+        for(BotonTeclado b : teclado.getBotones()) {
+            switch (tipo) {
+                case 0:
+                    if(b.getText().equals(a)) {
+                        b.setBackground(new Color(89,87,87));
+                        b.setForeground(Color.white);
+                    }
+                    break;
+                case 1:
+                    if(b.getText().equals(a)) {
+                        b.setBackground(new Color(210, 174, 26));
+                        b.setForeground(Color.white);
+                    }
+                    break;
+                case 2:
+                    if(b.getText().equals(a)) {
+                        b.setBackground(new Color(62, 157, 23));
+                        b.setForeground(Color.white);
+                    }
+                    break;
+            }
+        }
     }
 }

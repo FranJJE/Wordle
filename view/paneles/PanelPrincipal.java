@@ -28,6 +28,7 @@ public class PanelPrincipal extends JFrame {
         pantalla.setLocationRelativeTo(null);
         pantalla.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
+    public static PanelTeclado getTeclado() {return teclado;}
     public static PanelLetra getPanel() {
         return letras;
     }
